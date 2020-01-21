@@ -1,9 +1,10 @@
 ## Rust Nightly Commit Hash Checker 
-Usually we expect some new features or fixes to be included into the rust nightly build. If you already know the coordinating git commit hash, you can use this tool to check whether this commit has been included into the newest nightly build.
+Usually we expect some new features or fixes to be included into the rust nightly build.   
+If you already know the corresponding git commit hash, you can use this tool to check whether this commit has been included into the latest nightly build.
 
 ## Example
-You should set some environment variables before running, including `USER_TOKEN` and `USER_NAME` of your github account.  
-These environment variables are required by Github GraphQL API.  
+You should set some environment variables before running this tool, including `USER_TOKEN` and `USER_NAME` of your github account.  
+These environment variables are required for the Github GraphQL API.  
 You can also set them [in the `.env` file](https://docs.rs/dotenv/0.15.0/dotenv/). 
  
 ```bash
@@ -17,6 +18,6 @@ Not found! Nightly build doesn't contain this commit: bff216c56f472dd751d3da6360
 ```
 
 ## Notes
-This program queries the Github GraphQL API 5 times, each time it will fetch 100 ancestor commits of the nightly build, so totally 500 commits will be checked.      
-You can adjust the `trail_count` from the default `5` to other values. 
+This program queries the Github GraphQL API for 5 times. Each time it will fetch 100 ancestor commits of the nightly build. So a total of 500 commits will be checked.      
+You can adjust the `trail_count` from the default value of `5` to other values. 
 
